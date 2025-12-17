@@ -1,0 +1,5 @@
+func cube(x) {
+    return x * x * x
+}
+
+return cube(100)

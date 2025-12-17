@@ -1,0 +1,55 @@
+program = { statement }, EOF ;
+
+statement =
+    assignment
+  | if_statement
+  | function_definition
+  | return_statement
+  | expression
+  ;
+
+assignment =
+    IDENTIFIER, "=", expression ;
+
+if_statement =
+    "if", expression, block, [ "else", block ] ;
+
+function_definition =
+    "func", IDENTIFIER, "(", [ parameter_list ], ")", block ;
+
+return_statement =
+    "return", expression ;
+
+block =
+    "{", { statement }, "}" ;
+
+expression =
+    additive ;
+
+additive =
+    multiplicative, { ( "+" | "-" ), multiplicative } ;
+
+multiplicative =
+    unary, { ( "*" | "/" ), unary } ;
+
+unary =
+    primary ;
+
+primary =
+      NUMBER
+    | IDENTIFIER
+    | function_call
+    | lambda
+    | "(", expression, ")" ;
+
+function_call =
+    IDENTIFIER, "(", [ argument_list ], ")" ;
+
+argument_list =
+    { expression } ;
+
+parameter_list =
+    { IDENTIFIER } ;
+
+lambda =
+    "λ", "(", [ parameter_list ], ")", block ;
