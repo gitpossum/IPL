@@ -6,6 +6,12 @@ IPL (**I**nterpreted **P**rogramming **L**anguage), is a small programming langu
 
 The **Luau** version is currently the only stable version, that can be tested. Even thought it is 'stable', we still have some things to implement. We hope to have this development done by the next 3 months.
 
+### Running with Lune
+
+```bash
+lune run proto/luau/eval.luau <file-name.ipl>
+```
+
 ## Syntax
 
 ```ebnf
