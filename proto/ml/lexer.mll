@@ -34,5 +34,8 @@ rule token = parse
   | '{' { LBrace }
   | '}' { RBrace }
   | '\\' { Lambda }
+  | ';' { Semicolon }
+  | ',' { Comma }
+  | "=>" { Arrow }
   | eof { EOF }
   | _ as c { failwith ("Unexpected character: " ^ String.make 1 c) }

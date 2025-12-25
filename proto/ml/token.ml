@@ -10,10 +10,13 @@ type token =
   | Minus
   | Star
   | Slash
+  | Semicolon
+  | Comma
   | Equal
   | LParen
   | RParen
   | LBrace
   | RBrace
   | Lambda
+  | Arrow
   | EOF
